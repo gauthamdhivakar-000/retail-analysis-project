@@ -39,5 +39,5 @@
 
 - Hybrid Prophet + LSTM model
 - Churn prediction
-- Inventory optimization
+- Inventory optimizations
 
