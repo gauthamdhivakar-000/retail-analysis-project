@@ -42,30 +42,33 @@ RetailPulse AI helps organizations answer critical business questions:
 
 ---
 
-## 🏗️ Project Architecture
 
-```text
-Raw Retail Data
-       │
-       ▼
-Data Cleaning & Validation
-       │
-       ▼
-Feature Engineering
-       │
-       ├── Demand Forecasting
-       ├── Customer Segmentation
-       ├── Churn Prediction
-       └── Inventory Optimization
-       │
-       ▼
-Model Monitoring & Drift Detection
-       │
-       ▼
-Automated Retraining Pipeline
-       │
-       ▼
-Streamlit Analytics Dashboard
+## 🏗️ System Architecture
+
+```mermaid
+flowchart TD
+
+A[Raw Retail Data] --> B[Data Cleaning & Validation]
+
+B --> C[Feature Engineering]
+
+C --> D[Demand Forecasting]
+C --> E[Customer Segmentation]
+C --> F[Churn Prediction]
+C --> G[Inventory Optimization]
+
+D --> H[Model Monitoring]
+E --> H
+F --> H
+G --> H
+
+H --> I[Drift Detection]
+
+I --> J[Automated Retraining]
+
+J --> K[Streamlit Dashboard]
+
+K --> L[Business Insights & Decision Support]
 ```
 
 ---
@@ -279,6 +282,24 @@ RetailPulse AI transforms raw retail data into actionable intelligence by:
 * MLOps Monitoring Workflow
 * Interactive Business Dashboard
 * Production-Ready Project Structure
+
+---
+
+
+## 🎓 Skills Demonstrated
+
+- Data Cleaning & Preprocessing
+- Exploratory Data Analysis (EDA)
+- Time Series Forecasting
+- Deep Learning (LSTM)
+- Machine Learning (XGBoost)
+- Customer Analytics
+- Inventory Optimization
+- MLOps & Model Monitoring
+- Dashboard Development
+- Git & GitHub
+- Business Intelligence
+
 
 ---
 
