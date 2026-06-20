@@ -116,6 +116,14 @@ sales = pd.read_csv(
 
 sales["ds"] = pd.to_datetime(sales["ds"])
 
+
+
+forecast = pd.read_csv(
+    DATA_DIR / "hybrid_forecast.csv"
+)
+
+forecast["ds"] = pd.to_datetime(forecast["ds"])
+
 # ==================================================
 # KPI CALCULATIONS
 # ==================================================
@@ -215,6 +223,79 @@ st.plotly_chart(
     fig,
     use_container_width=True
 )
+
+
+
+# ==================================================
+# HYBRID FORECAST VISUALIZATION
+# ==================================================
+
+st.markdown(
+    '<div class="section-title">🔮 Hybrid Forecast Analysis</div>',
+    unsafe_allow_html=True
+)
+
+forecast_fig = px.line(
+    forecast,
+    x="ds",
+    y=["y", "yhat", "lstm_pred", "hybrid_pred"],
+    labels={"value": "Sales", "ds": "Date"},
+)
+
+forecast_fig.update_layout(
+    paper_bgcolor="white",
+    plot_bgcolor="white",
+    height=650,
+    legend_title="Forecast Models"
+)
+
+st.plotly_chart(
+    forecast_fig,
+    use_container_width=True
+)
+
+
+# ==================================================
+# WHAT-IF ANALYSIS
+# ==================================================
+
+st.markdown(
+    '<div class="section-title">🎯 What-If Analysis</div>',
+    unsafe_allow_html=True
+)
+
+growth_pct = st.slider(
+    "Expected Demand Change (%)",
+    min_value=-50,
+    max_value=50,
+    value=10,
+    step=5
+)
+
+forecast["scenario_sales"] = (
+    forecast["hybrid_pred"] * (1 + growth_pct / 100)
+)
+
+scenario_fig = px.line(
+    forecast,
+    x="ds",
+    y=["hybrid_pred", "scenario_sales"],
+    labels={"value": "Sales", "ds": "Date"}
+)
+
+scenario_fig.update_layout(
+    paper_bgcolor="white",
+    plot_bgcolor="white",
+    height=600,
+    legend_title="Scenario Analysis"
+)
+
+st.plotly_chart(
+    scenario_fig,
+    use_container_width=True
+)
+
+
 
 # ==================================================
 # AI INSIGHT
