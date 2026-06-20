@@ -230,6 +230,44 @@ with col2:
         use_container_width=True
     )
 
+
+    # -----------------------------
+# RFM Segment Analysis
+# -----------------------------
+
+st.markdown(
+    '<div class="section-title">💎 RFM Segment Analysis</div>',
+    unsafe_allow_html=True
+)
+
+rfm_summary = (
+    df.groupby("Cluster")[["Recency", "Frequency", "Monetary"]]
+    .mean()
+    .reset_index()
+)
+
+fig_rfm = px.bar(
+    rfm_summary,
+    x="Cluster",
+    y="Monetary",
+    color="Frequency",
+    text_auto=".0f",
+    title="Average Monetary Value by Cluster"
+)
+
+fig_rfm.update_layout(
+    height=550,
+    paper_bgcolor="white",
+    plot_bgcolor="white"
+)
+
+st.plotly_chart(
+    fig_rfm,
+    use_container_width=True
+)
+
+
+
 # -----------------------------
 # Customer Intelligence
 # -----------------------------

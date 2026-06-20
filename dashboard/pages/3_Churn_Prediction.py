@@ -218,6 +218,45 @@ st.plotly_chart(
     use_container_width=True
 )
 
+
+
+# -----------------------------
+# Churn Risk by Segment
+# -----------------------------
+
+st.markdown(
+    '<div class="section-title">📊 Churn Risk by Segment</div>',
+    unsafe_allow_html=True
+)
+
+segment_churn = (
+    df.groupby("Cluster")["Churn_Prediction"]
+    .sum()
+    .reset_index()
+)
+
+fig_segment = px.bar(
+    segment_churn,
+    x="Cluster",
+    y="Churn_Prediction",
+    color="Churn_Prediction",
+    text_auto=True,
+    title="At-Risk Customers by Segment"
+)
+
+fig_segment.update_layout(
+    height=500,
+    paper_bgcolor="white",
+    plot_bgcolor="white"
+)
+
+st.plotly_chart(
+    fig_segment,
+    use_container_width=True
+)
+
+
+
 # -----------------------------
 # High Risk Customers
 # -----------------------------
