@@ -1,5 +1,19 @@
 # 📊 RetailPulse AI – Intelligent Retail Analytics Platform
 
+
+
+
+![Python](https://img.shields.io/badge/Python-3.11+-blue?logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red?logo=streamlit)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange?logo=scikitlearn)
+![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-red?logo=pytorch)
+![Prophet](https://img.shields.io/badge/Prophet-Forecasting-green)
+![GitHub](https://img.shields.io/badge/GitHub-Portfolio-black?logo=github)
+![License](https://img.shields.io/badge/License-Educational-blue)
+
+
+
+
 ## 🚀 Overview
 
 RetailPulse AI is an end-to-end retail analytics platform that combines Data Science, Machine Learning, Forecasting, Customer Analytics, and MLOps into a unified business intelligence solution.
@@ -237,6 +251,23 @@ RetailPulse AI transforms raw retail data into actionable intelligence by:
 * Increasing customer retention
 * Supporting targeted marketing strategies
 * Monitoring model reliability in production
+
+---
+
+
+## 📊 Project Highlights
+
+* ✅ End-to-End Data Science Pipeline
+* ✅ Time Series Forecasting (Prophet + LSTM + Hybrid)
+* ✅ Customer Segmentation using RFM Analysis
+* ✅ Machine Learning Churn Prediction
+* ✅ Inventory Optimization Framework
+* ✅ Data Drift Detection & Monitoring
+* ✅ Automated Retraining Workflow
+* ✅ Interactive Streamlit Dashboard
+* ✅ GitHub Version Control
+* ✅ Deployment-Ready Architecture
+
 
 ---
 
