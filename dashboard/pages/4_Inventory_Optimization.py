@@ -204,6 +204,104 @@ st.metric(
     f"{inventory_score}%"
 )
 
+
+# -----------------------------
+# Inventory Scenario Planner
+# -----------------------------
+
+st.markdown(
+    '<div class="section-title">🎯 Inventory Scenario Planner</div>',
+    unsafe_allow_html=True
+)
+
+demand_change = st.slider(
+    "Expected Demand Change (%)",
+    min_value=-50,
+    max_value=50,
+    value=10,
+    step=5
+)
+
+new_reorder_point = reorder_point * (
+    1 + demand_change / 100
+)
+
+new_safety_stock = safety_stock * (
+    1 + demand_change / 100
+)
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.metric(
+        "Adjusted Reorder Point",
+        f"{new_reorder_point:,.0f}"
+    )
+
+with col2:
+    st.metric(
+        "Adjusted Safety Stock",
+        f"{new_safety_stock:,.0f}"
+    )
+
+
+    # -----------------------------
+# Inventory Recommendation Engine
+# -----------------------------
+
+st.markdown(
+    '<div class="section-title">🤖 Inventory Recommendation Engine</div>',
+    unsafe_allow_html=True
+)
+
+if demand_change >= 20:
+    st.warning(
+        "High demand expected. Increase inventory procurement and maintain higher safety stock levels."
+    )
+
+elif demand_change <= -20:
+    st.info(
+        "Demand expected to decrease. Reduce replenishment frequency to avoid overstocking."
+    )
+
+else:
+    st.success(
+        "Demand remains stable. Continue with current inventory strategy."
+    )
+
+
+
+    # -----------------------------
+# Inventory Action Summary
+# -----------------------------
+
+st.markdown(
+    '<div class="section-title">📋 Action Summary</div>',
+    unsafe_allow_html=True
+)
+
+action_df = pd.DataFrame({
+    "Metric": [
+        "Current Reorder Point",
+        "Adjusted Reorder Point",
+        "Current Safety Stock",
+        "Adjusted Safety Stock"
+    ],
+    "Value": [
+        round(reorder_point),
+        round(new_reorder_point),
+        round(safety_stock),
+        round(new_safety_stock)
+    ]
+})
+
+st.dataframe(
+    action_df,
+    use_container_width=True
+)
+
+
+
 # -----------------------------
 # Supply Chain Intelligence
 # -----------------------------
