@@ -222,7 +222,7 @@ retailpulse_project/
 Clone the repository:
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/gauthamdhivakar-000/retail-analysis-project.git
 ```
 
 Navigate to the project:
