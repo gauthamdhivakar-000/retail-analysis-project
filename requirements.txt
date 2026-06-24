@@ -16,3 +16,4 @@ joblib
 xgboost
 evidently
 streamlit-option-menu
+reportlab

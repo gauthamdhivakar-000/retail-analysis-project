@@ -3,6 +3,13 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+
+from reportlab.platypus import SimpleDocTemplate, Paragraph
+from reportlab.lib.styles import getSampleStyleSheet
+import tempfile
+
+
+
 st.set_page_config(
     page_title="Inventory Optimization",
     page_icon="📦",
@@ -300,6 +307,74 @@ st.dataframe(
     use_container_width=True
 )
 
+
+
+# -----------------------------
+# Export Report
+# -----------------------------
+
+st.markdown(
+    '<div class="section-title">📥 Export Report</div>',
+    unsafe_allow_html=True
+)
+
+csv_data = action_df.to_csv(index=False)
+
+st.download_button(
+    label="📄 Download Inventory Report (CSV)",
+    data=csv_data,
+    file_name="inventory_report.csv",
+    mime="text/csv"
+)
+
+
+# PDF Report Generation
+
+if st.button("📄 Generate PDF Report"):
+
+    pdf_file = tempfile.NamedTemporaryFile(
+        delete=False,
+        suffix=".pdf"
+    )
+
+    doc = SimpleDocTemplate(pdf_file.name)
+
+    styles = getSampleStyleSheet()
+
+    content = [
+        Paragraph(
+            "Inventory Optimization Report",
+            styles["Title"]
+        ),
+        Paragraph(
+            f"Current Reorder Point: {round(reorder_point)}",
+            styles["BodyText"]
+        ),
+        Paragraph(
+            f"Adjusted Reorder Point: {round(new_reorder_point)}",
+            styles["BodyText"]
+        ),
+        Paragraph(
+            f"Current Safety Stock: {round(safety_stock)}",
+            styles["BodyText"]
+        ),
+        Paragraph(
+            f"Adjusted Safety Stock: {round(new_safety_stock)}",
+            styles["BodyText"]
+        )
+    ]
+
+    doc.build(content)
+
+    with open(pdf_file.name, "rb") as pdf:
+        st.download_button(
+            label="⬇ Download PDF Report",
+            data=pdf,
+            file_name="inventory_report.pdf",
+            mime="application/pdf"
+        )
+
+        
 
 
 # -----------------------------
