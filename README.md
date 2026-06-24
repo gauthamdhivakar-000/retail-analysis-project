@@ -245,6 +245,41 @@ streamlit run dashboard/Home.py
 
 ---
 
+
+## 🌐 Deployment
+
+The RetailPulse AI dashboard is deployment-ready and can be hosted on Streamlit Community Cloud.
+
+### Deployment Steps
+
+1. Push the latest code to GitHub
+2. Connect the repository to Streamlit Community Cloud
+3. Set the main file as:
+
+```bash
+dashboard/Home.py
+```
+
+4. Install dependencies using:
+
+```bash
+requirements.txt
+```
+
+5. Deploy and monitor application health
+
+### Deployment Files
+
+* requirements.txt
+* packages.txt
+* README.md
+* .gitignore
+
+The application follows a production-ready modular structure for scalable deployment and maintenance.
+
+
+---
+
 ## 📊 Business Impact
 
 RetailPulse AI transforms raw retail data into actionable intelligence by:
