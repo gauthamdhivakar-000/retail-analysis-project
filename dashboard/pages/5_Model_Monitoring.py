@@ -203,6 +203,60 @@ else:
         "⚠️ Model Status: Drift Detected"
     )
 
+
+
+    # -----------------------------
+# Alert Center
+# -----------------------------
+
+st.markdown(
+    '<div class="section-title">🚨 Alert Center</div>',
+    unsafe_allow_html=True
+)
+
+if str(drift_percentage) == "0%":
+    st.success(
+        "✅ No active alerts. Model is operating normally."
+    )
+else:
+    st.error(
+        "🚨 Drift detected. Model retraining recommended."
+    )
+
+
+
+    # -----------------------------
+# Real-Time Monitoring Metrics
+# -----------------------------
+
+st.markdown(
+    '<div class="section-title">📡 Monitoring Metrics</div>',
+    unsafe_allow_html=True
+)
+
+m1, m2, m3 = st.columns(3)
+
+with m1:
+    st.metric(
+        "Model Status",
+        status
+    )
+
+with m2:
+    st.metric(
+        "Drift Features",
+        columns_drift
+    )
+
+with m3:
+    st.metric(
+        "Monitoring Coverage",
+        f"{columns_monitored} Features"
+    )
+
+
+    
+
 # -----------------------------
 # Drift Summary Chart
 # -----------------------------
