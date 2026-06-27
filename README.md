@@ -1,3 +1,8 @@
+![CI](https://github.com/gauthamdhivakar-000/retail-analysis-project/actions/workflows/ci.yml/badge.svg)
+
+
+
+
 # 📊 RetailPulse AI – Intelligent Retail Analytics Platform
 
 
