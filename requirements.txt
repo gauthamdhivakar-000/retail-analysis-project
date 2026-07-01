@@ -8,7 +8,6 @@ torch
 pytorch-lightning
 statsmodels
 openpyxl
-jupyter
 
 streamlit
 plotly
