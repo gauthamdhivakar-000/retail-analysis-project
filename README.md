@@ -1,6 +1,10 @@
 ![CI](https://github.com/gauthamdhivakar-000/retail-analysis-project/actions/workflows/ci.yml/badge.svg)
 
 
+![GitHub last commit](https://img.shields.io/github/last-commit/gauthamdhivakar-000/retail-analysis-project)
+![GitHub repo size](https://img.shields.io/github/repo-size/gauthamdhivakar-000/retail-analysis-project)
+![GitHub stars](https://img.shields.io/github/stars/gauthamdhivakar-000/retail-analysis-project?style=social)
+
 
 
 # 📊 RetailPulse AI – Intelligent Retail Analytics Platform
@@ -16,6 +20,19 @@
 ![GitHub](https://img.shields.io/badge/GitHub-Portfolio-black?logo=github)
 ![License](https://img.shields.io/badge/License-Educational-blue)
 
+
+
+## 🌐 Live Demo
+
+🚀 **Experience the live application here:**
+
+**Streamlit Dashboard:**  
+https://retail-analysis-projectgit-udoctr34pjahk65nrw8nlo.streamlit.app
+
+**GitHub Repository:**  
+https://github.com/gauthamdhivakar-000/retail-analysis-project
+
+---
 
 
 
@@ -149,6 +166,48 @@ Project overview, objectives, architecture, and technology stack.
 
 ---
 
+
+## 📷 Dashboard Preview
+
+The RetailPulse dashboard provides a centralized interface for monitoring demand forecasting, customer segmentation, churn prediction, inventory optimization, and model monitoring.
+
+> Add the dashboard screenshots below after uploading them to your repository.
+
+| Home | Demand Forecasting |
+|------|------|
+| ![](screenshots/home_dashboard.png) | ![](screenshots/demand_forecasting_dashboard.png) |
+
+| Customer Segmentation | Churn Prediction |
+|------|------|
+| ![](screenshots/customer_segmentation_dashboard.png) | ![](screenshots/churn_prediction_dashboard.png) |
+
+| Inventory Optimization | Model Monitoring |
+|------|------|
+| ![](screenshots/inventory_optimization_dashboard.png) | ![](screenshots/model_monitoring_dashboard.png) |
+
+
+---
+
+
+
+## 🔄 Project Workflow
+
+1. Data Collection
+2. Data Cleaning
+3. Feature Engineering
+4. Exploratory Data Analysis
+5. Demand Forecasting
+6. Customer Segmentation
+7. Churn Prediction
+8. Inventory Optimization
+9. Drift Detection
+10. Dashboard Development
+11. Deployment on Streamlit Community Cloud
+
+
+---
+
+
 ## 🛠️ Technology Stack
 
 ### Programming
@@ -251,27 +310,26 @@ streamlit run dashboard/Home.py
 ---
 
 
-## 🌐 Deployment
+## 🌐 Live Deployment
 
-The RetailPulse AI dashboard is deployment-ready and can be hosted on Streamlit Community Cloud.
+RetailPulse AI has been successfully deployed on **Streamlit Community Cloud** and is publicly accessible.
 
-### Deployment Steps
+**Live Application**
 
-1. Push the latest code to GitHub
-2. Connect the repository to Streamlit Community Cloud
-3. Set the main file as:
+https://retail-analysis-projectgit-udoctr34pjahk65nrw8nlo.streamlit.app
+
+Deployment includes:
+
+- Interactive Streamlit Dashboard
+- Multi-page Navigation
+- Automated dependency installation
+- GitHub integration
+- Cloud hosting
+
+The application is configured to launch using:
 
 ```bash
 dashboard/Home.py
-```
-
-4. Install dependencies using:
-
-```bash
-requirements.txt
-```
-
-5. Deploy and monitor application health
 
 ### Deployment Files
 
@@ -297,6 +355,26 @@ RetailPulse AI transforms raw retail data into actionable intelligence by:
 
 ---
 
+## 📂 Dataset
+
+This project uses the **Online Retail Dataset**, which contains transactional records from a UK-based online retail store.
+
+The dataset includes:
+
+- Invoice Number
+- Product Description
+- Quantity
+- Invoice Date
+- Unit Price
+- Customer ID
+- Country
+
+The data is cleaned, transformed, and enriched through feature engineering before being used for analytics and machine learning models.
+
+
+---
+
+
 
 ## 📊 Project Highlights
 
@@ -310,6 +388,23 @@ RetailPulse AI transforms raw retail data into actionable intelligence by:
 * ✅ Interactive Streamlit Dashboard
 * ✅ GitHub Version Control
 * ✅ Deployment-Ready Architecture
+
+
+
+
+---
+
+
+
+## 📌 Repository Features
+
+- Modular project architecture
+- Organized source code
+- Notebook-based development workflow
+- Automated CI workflow using GitHub Actions
+- Docker support
+- Streamlit Cloud deployment
+- Easy local setup
 
 
 ---
@@ -343,6 +438,18 @@ RetailPulse AI transforms raw retail data into actionable intelligence by:
 
 ---
 
+## 🚀 Future Enhancements
+
+- Real-time retail data integration
+- Sales prediction API
+- User authentication
+- Cloud database integration
+- Automated model retraining scheduling
+- Role-based dashboards
+- Enhanced monitoring and alerting
+
+
+
 ## 👨‍💻 Author
 
 **Gautham**
@@ -350,6 +457,12 @@ RetailPulse AI transforms raw retail data into actionable intelligence by:
 Data Science & Analytics Project Portfolio
 
 ---
+## 🙏 Acknowledgement
+
+This project was developed as part of a Data Science & Analytics Internship to demonstrate practical applications of machine learning, forecasting, customer analytics, and business intelligence. It reflects the complete development lifecycle, from data preparation to deployment of an interactive analytics dashboard.
+
+
+
 
 ## 📜 License
 
